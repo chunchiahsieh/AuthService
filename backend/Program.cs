@@ -2,20 +2,26 @@ using Api.Authorization;
 using Api.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+// è®€å– Connection String ä¸¦è¨»å†Š DbContext
+builder.Services.AddDbContext<ApiDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddJwtAuthentication(builder.Configuration); // Swagger³]©w
+builder.Services.AddJwtAuthentication(builder.Configuration); // Swaggerï¿½]ï¿½w
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddCustomSwagger(); // Swagger³]©w
-builder.Services.AddCustomAuthorization(); // ¥[¤J¦Û­q±ÂÅv
+builder.Services.AddCustomSwagger(); // Swaggerï¿½]ï¿½w
+builder.Services.AddCustomAuthorization(); // ï¿½[ï¿½Jï¿½Û­qï¿½ï¿½ï¿½v
 
 var app = builder.Build();
 
@@ -26,10 +32,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();//Åı ©Ò¦³ HTTP ½Ğ¨D¦Û°ÊÂà¦V HTTPS¡A´£°ª¦w¥ş©Ê¡C
+app.UseHttpsRedirection();//ï¿½ï¿½ ï¿½Ò¦ï¿½ HTTP ï¿½Ğ¨Dï¿½Û°ï¿½ï¿½ï¿½V HTTPSï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Ê¡C
 
-app.UseAuthentication();//¨Ï¥ÎÅv­­½T«OAPI¦³¥Î
-app.UseAuthorization(); //Åıtoken±ÂÅv¾÷¨î¥Í®Ä
+app.UseAuthentication();//ï¿½Ï¥ï¿½ï¿½vï¿½ï¿½ï¿½Tï¿½OAPIï¿½ï¿½ï¿½ï¿½
+app.UseAuthorization(); //ï¿½ï¿½tokenï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½Í®ï¿½
 
 app.MapControllers();
 

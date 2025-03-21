@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|solutionrelative:api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\api\\extensions\\authorizationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCCCBBBC-40C4-482B-9AF6-2EB95DB9ED5B}|Api\\Api.csproj|solutionrelative:api\\extensions\\authorizationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Api\\appsettings.json",
-              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\appsettings.json",
-              "RelativeToolTip": "Api\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-20T19:52:07.918Z",
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwC0AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T05:45:52.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthorizationExtensions.cs",
-              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\Extensions\\AuthorizationExtensions.cs",
-              "RelativeDocumentMoniker": "Api\\Extensions\\AuthorizationExtensions.cs",
-              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\Extensions\\AuthorizationExtensions.cs",
-              "RelativeToolTip": "Api\\Extensions\\AuthorizationExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABTAAAA",
+              "DocumentIndex": 0,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\IAuthService.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Services\\IAuthService.cs",
+              "RelativeToolTip": "Services\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T19:51:43.667Z"
+              "WhenOpened": "2025-03-21T05:42:42.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Api\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "Api\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAIwDIAAABOAAAA",
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAUwJgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T19:51:41.174Z"
+              "WhenOpened": "2025-03-21T05:42:26.818Z",
+              "EditorCaption": ""
             }
           ]
         }
