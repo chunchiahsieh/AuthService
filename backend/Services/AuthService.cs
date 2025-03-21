@@ -2,6 +2,7 @@
 using Api.Data;
 using Api.DTOs;
 using Api.Models;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -147,6 +148,30 @@ namespace Api.Services
             await _context.SaveChangesAsync();
 
             return (newAccessToken, newRefreshToken);
+        }
+
+        public async Task<(string message,User user)> AutoRegister()
+        {
+
+            var userCount = await _context.Users.CountAsync();
+            if (userCount > 0)
+            {
+                // 如果有資料，則不允許註冊，並返回錯誤訊息
+                return (message:"Cannot register users because the Users table is not empty", user:new User());
+            }
+
+            // 創建新的用戶實例
+            var newUser = new User
+            {
+                Email = "admin",
+                PasswordHash = HashPassword("1111"), // 密碼處理方法應使用強加密算法
+            };
+
+            // 將新用戶加入資料庫
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+            newUser.PasswordHash = "1111";
+            return (message:"User successfully registered.", user:newUser);
         }
     }
 }

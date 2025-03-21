@@ -35,10 +35,6 @@ public partial class AuthServiceContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.ExpiresAt).HasColumnType("datetime");
             entity.Property(e => e.RefreshToken).HasMaxLength(1024);
-
-            entity.HasOne(d => d.User).WithMany(p => p.AuthTokens)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_AuthTokens_Users");
         });
 
         modelBuilder.Entity<User>(entity =>

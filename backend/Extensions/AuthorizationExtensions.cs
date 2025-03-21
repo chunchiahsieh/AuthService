@@ -13,12 +13,11 @@ namespace Api.Extensions
             services.AddHttpContextAccessor();
             services.AddScoped<IAuthorizationHandler, PermissionHandler>();
 
-            services.AddAuthorization(
-               /* options =>
-                {
-                    options.AddPolicy("EditUserPolicy", policy =>
-                        policy.Requirements.Add(new PermissionRequirement("EditUser")));
-                }*/
+            services.AddAuthorization(options =>
+            {
+                //這邊加入權限檢查
+                //options.AddPolicy("SwaggerPolicy", policy => policy.RequireRole("superUser"));
+            }
             );
 
             return services;

@@ -31,7 +31,7 @@ namespace Api.Authorization
 
             if (!response.IsSuccessStatusCode)
             {
-                return; // API 查詢失敗，授權失敗
+                return; // API 查詢失敗，   授權失敗
             }
 
             var json = await response.Content.ReadAsStringAsync();

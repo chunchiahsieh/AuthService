@@ -8,14 +8,17 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using Api.Data;
+using Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // 讀取 Connection String 並註冊 DbContext
 builder.Services.AddDbContext<ApiDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add services to the container.
+// 註冊 IAuthService 和 AuthService
+builder.Services.AddScoped<IAuthService, AuthService>();
 
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddJwtAuthentication(builder.Configuration); // JWT設定
 
