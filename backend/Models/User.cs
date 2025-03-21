@@ -16,6 +16,4 @@ public partial class User
     public DateTime? UpdatedAt { get; set; }
 
     public virtual ICollection<AuthToken> AuthTokens { get; set; } = new List<AuthToken>();
-
-    public virtual ICollection<UserSession> UserSessions { get; set; } = new List<UserSession>();
 }

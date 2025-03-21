@@ -17,11 +17,11 @@ builder.Services.AddDbContext<ApiDbContext>(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddJwtAuthentication(builder.Configuration); // Swagger�]�w
+builder.Services.AddJwtAuthentication(builder.Configuration); // JWT設定
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddCustomSwagger(); // Swagger�]�w
-builder.Services.AddCustomAuthorization(); // �[�J�ۭq���v
+builder.Services.AddCustomSwagger(); // Swagger設定
+builder.Services.AddCustomAuthorization(); // 克制化權限管理
 
 var app = builder.Build();
 
@@ -32,10 +32,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();//�� �Ҧ� HTTP �ШD�۰���V HTTPS�A�����w���ʡC
+app.UseHttpsRedirection();//強制轉換HTTP to HTTPS
 
-app.UseAuthentication();//�ϥ��v���T�OAPI����
-app.UseAuthorization(); //��token���v����ͮ�
+app.UseAuthentication();//啟用身份驗證 [Authorize]表示有token才能使用
+app.UseAuthorization(); //啟用授權中介軟體
 
 app.MapControllers();
 

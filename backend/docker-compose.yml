@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # MSSQL Service
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1111  # 請將密碼更改為你自己的密碼
+    ports:
+      - "1433:1433"
+    networks:
+      - app-network
+    volumes:
+      - ./docker/mssql_data:/var/opt/mssql # 將資料放在本機的 ./docker/mssql_data 資料夾中
+
+  # .NET Core Service (請根據你的 .NET 應用調整)
+  dotnet-app:
+    image: authService-dotnet-app-image # 這裡用你的應用 Docker 映像名稱
+    container_name: dotnet_app
+    depends_on:
+      - mssql
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql,1433;Database=AuthService;User Id=sa;Password=1111
+    ports:
+      - "5000:8001"  # 假設你的應用在容器內部使用80端口
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mssql_data:
+    driver: local
