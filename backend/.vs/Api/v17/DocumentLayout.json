@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\extensions\\addcustomcors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:extensions\\addcustomcors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\dtos\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:dtos\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|c:\\disk f\\aga\\microservices\\authservice\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F9A7AFFA-4682-4210-A6EE-23A19A5899B3}|Api.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AddCustomCors.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Extensions\\AddCustomCors.cs",
+              "RelativeDocumentMoniker": "Extensions\\AddCustomCors.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Extensions\\AddCustomCors.cs",
+              "RelativeToolTip": "Extensions\\AddCustomCors.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T13:21:47.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T13:10:43.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RefreshTokenRequest.cs",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\DTOs\\RefreshTokenRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\RefreshTokenRequest.cs",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\DTOs\\RefreshTokenRequest.cs",
+              "RelativeToolTip": "DTOs\\RefreshTokenRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T17:06:51.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAhwFAAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T08:53:27.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T16:45:39.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Disk F\\Aga\\Microservices\\AuthService\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-21T16:13:55.83Z"
             }
           ]
         }

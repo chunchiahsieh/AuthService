@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 
-namespace Api.Extensions // ✅ 確保這個擴充方法有適當的命名空間
+namespace Api.Extensions // 確保這個擴充方法有適當的命名空間
 {
     public static class JwtExtensions
     {

@@ -9,43 +9,36 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate ,useLocation } from 'react-router-dom';
-import {login,LoginDTO} from '../../Api/auth';
+import {useLogin} from "../../models/AuthModel";
+import { useNavigate } from 'react-router-dom';
+
 
 const theme = createTheme();
-
 export function Login() {
-  const [errorMessage, setErrorMessage] = useState<string>(''); // 這裡要設置初始值，默認為空字串
-  const navigate = useNavigate(); // 使用 useNavigate
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  const mutation = useLogin();
+  const navigate = useNavigate(); // 用於登入成功後跳轉頁面
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // 使用 LoginDTO 物件來接收資料
-    const loginData: LoginDTO = {
-      userId: String(data.get('userid')), // 強制轉換為字串
-      password: String(data.get('password')), // 強制轉換為字串
-    };
-    console.log(loginData);
-     // 呼叫 login 函數並處理登入邏輯
-
-     const {message, result,token } = await login(loginData);
-
-       // **取得 `redirectUrl`，如果沒有則預設跳轉 `/home`**
-    const redirectUrl = new URLSearchParams(location.search).get("redirectUrl") || "/home";
-
-     if (result == true) {
-      if (redirectUrl.startsWith("http")) {
-        const url = token ? `${redirectUrl}?token=${encodeURIComponent(token)}` : redirectUrl;
-        window.location.href = url;
-      } else {
-        navigate(redirectUrl);
-      }
-     } else {
-       // 登入失敗，顯示錯誤訊息
-       setErrorMessage(message);
-     }
+    try {
+      mutation.mutate( { email, password }
+        ,{
+          onSuccess: (data) => {
+            window.dispatchEvent(new Event("auth-success"));
+            console.log("登入成功", data);
+          },
+          onError: (error: any) => {
+            window.dispatchEvent(new Event("auth-failed"));
+            console.error("登入失敗:", error);
+          },
+        }
+      );
+    } catch (err) {
+      console.error("發生異常錯誤:", err);
+    }
   };
 
   return (
@@ -71,11 +64,14 @@ export function Login() {
               margin="normal"
               required
               fullWidth
-              id="userid"
-              label="User Id"
-              name="userid"
-              autoComplete="UserId"
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
               autoFocus
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              value={email}
             />
             <TextField
               margin="normal"
@@ -86,6 +82,8 @@ export function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -99,10 +97,10 @@ export function Login() {
             >
               Sign In
             </Button>
-            {errorMessage && (
-              <div style={{ color: 'red', fontSize: '16px', fontWeight: 'bold' }}>
-                {errorMessage}
-              </div>
+            {mutation.isError && (
+              <Typography color="error" sx={{ fontSize: "14px", textAlign: "center" }}>
+                登入失敗，請檢查帳號密碼
+              </Typography>
             )}
           </Box>
         </Paper>

@@ -18,11 +18,14 @@ builder.Services.AddDbContext<ApiDbContext>(options =>
 // 註冊 IAuthService 和 AuthService
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddJwtAuthentication(builder.Configuration); // JWT設定
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddCustomCors();// 註冊 CORS 設定
 builder.Services.AddCustomSwagger(); // Swagger設定
 builder.Services.AddCustomAuthorization(); // 克制化權限管理
 
@@ -34,6 +37,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// 啟用 CORS
+app.UseCustomCors();
 
 app.UseHttpsRedirection();//強制轉換HTTP to HTTPS
 

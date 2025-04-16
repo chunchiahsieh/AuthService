@@ -27,12 +27,18 @@ namespace Api.Services
             _logger = logger;
         }
 
-        public async Task<(string AccessToken, string RefreshToken)> Login(LoginDTO dto)
+        public async Task<(string AccessToken, string RefreshToken)> Login(LoginRequest dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
             if (user == null || !VerifyPassword(dto.Password, user.PasswordHash))
                 throw new UnauthorizedAccessException("Invalid username or password");
 
+            var token = await _context.AuthTokens.FirstOrDefaultAsync(u => u.UserId == user.Id);
+            if (token != null)
+            {
+                return (token.AccessToken, token.RefreshToken);
+            }
+               
             var accessToken = GenerateJwtToken(user);
             var refreshToken = await GenerateRefreshToken();
             // 儲存 Token 到資料庫

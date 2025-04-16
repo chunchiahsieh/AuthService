@@ -45,9 +45,8 @@ namespace Api.Controllers
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO model)
+        public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest model)
         {
-
             if (model == null || string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Password))
             {
                 return BadRequest(new { message = "Invalid request data" });
@@ -56,7 +55,7 @@ namespace Api.Controllers
             try
             {
                 var tokens = await _service.Login(model); // 讓 AuthService 處理登入邏輯
-                return Ok(new
+                return Ok(new LoginResponse
                 {
                     AccessToken = tokens.AccessToken,
                     RefreshToken = tokens.RefreshToken
@@ -71,7 +70,7 @@ namespace Api.Controllers
 
         [Authorize]
         [HttpPost("refresh-token")]
-        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO dto)
+        public async Task<ActionResult<LoginResponse>> RefreshToken([FromBody] RefreshTokenRequest dto)
         {
             if (dto == null || string.IsNullOrWhiteSpace(dto.RefreshToken))
             {
@@ -81,7 +80,7 @@ namespace Api.Controllers
             try
             {
                 var tokens = await _service.RefreshToken(dto.RefreshToken);
-                return Ok(new
+                return Ok(new LoginResponse
                 {
                     AccessToken = tokens.AccessToken,
                     RefreshToken = tokens.RefreshToken
